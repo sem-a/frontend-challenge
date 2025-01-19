@@ -43,7 +43,6 @@ export const Card: React.FC<Props> = ({ cat, onUpdateLikes }) => {
   const removeCatFromLocalStorage = (id: string) => {
     let likedCats = JSON.parse(localStorage.getItem("likedCats") || "[]");
 
-    // Удаляем кота из списка понравившихся
     likedCats = likedCats.filter((sаvеd: Cat) => sаvеd.id !== id);
 
     localStorage.setItem("likedCats", JSON.stringify(likedCats));
@@ -56,8 +55,8 @@ export const Card: React.FC<Props> = ({ cat, onUpdateLikes }) => {
       <div
         className={`${styles.like} ${liked ? styles.liked : ""}`}
         onClick={handleLikeClick}
-        onMouseEnter={() => setHovered(true)} // Обработчик наводки мыши
-        onMouseLeave={() => setHovered(false)} // Обработчик ухода мыши
+        onMouseEnter={() => setHovered(true)}
+        onMouseLeave={() => setHovered(false)}
       >
         {hovered || liked ? (
           <FontAwesomeIcon
