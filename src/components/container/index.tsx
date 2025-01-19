@@ -16,7 +16,7 @@ export const Layout: React.FC<Props> = ({ children }) => {
   return (
     <>
       <Header />
-      <Container>{children}</Container>
+      <main style={{padding: '48px 0px'}}><Container>{children}</Container></main>
     </>
   );
 };

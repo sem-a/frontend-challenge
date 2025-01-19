@@ -1,7 +1,14 @@
 import { configureStore, ThunkAction, Action } from "@reduxjs/toolkit";
+import { api } from "./services/api";
+import cats from "../features/cats/catsSlice";
 
 export const store = configureStore({
-  reducer: {},
+  reducer: {
+    [api.reducerPath]: api.reducer,
+    cats,
+  },
+  middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware().concat(api.middleware),
 });
 
 export type AppDispatch = typeof store.dispatch;
