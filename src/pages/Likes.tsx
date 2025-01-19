@@ -18,10 +18,17 @@ const Loading = () => {
     loadLikedCatsFromLocalStorage();
   }, []);
 
-  // Функция для обновления liked Cats
   const updateLikedCatList = () => {
-    loadLikedCatsFromLocalStorage(); // Перезагружаем список
+    loadLikedCatsFromLocalStorage();
   };
+
+  if(likedCats.length === 0) {
+    return <div>
+      <Layout>
+        <div>Нет любимчиков!</div>
+      </Layout>
+    </div>
+  }
 
    return (
      <div className="app">

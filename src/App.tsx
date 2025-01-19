@@ -7,7 +7,7 @@ import Loading from "./components/loading";
 import Error from "./components/error";
 
 const App = () => {
-  const [visibleCount, setVisibleCount] = useState(10); // Количество видимых котов
+  const [visibleCount, setVisibleCount] = useState(10);
   let { data: cats, isLoading, isError } = useGetCatsQuery();
 
   if (isLoading) {
@@ -21,7 +21,7 @@ const App = () => {
   console.log(cats);
 
   const handleShowMore = () => {
-    setVisibleCount((prevCount) => prevCount + 10); // Увеличиваем количество видимых котов на десять
+    setVisibleCount((prevCount) => prevCount + 10);
   };
 
   return (
